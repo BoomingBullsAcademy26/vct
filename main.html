@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,111 +10,103 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body{
-    background: linear-gradient(180deg,#081a12,#020d08);
-    color:#fff;
+    background: linear-gradient(180deg,#06150f,#020a06);
+    color:#ffffff;
 }
 
-/* Common */
+/* Layout */
 .container{
-    width:90%;
+    width:92%;
     max-width:1100px;
     margin:auto;
 }
 
+/* Buttons */
 .btn{
     display:inline-block;
-    padding:14px 26px;
+    width:100%;
+    max-width:320px;
+    padding:15px;
     background: linear-gradient(90deg,#00ff88,#00cfff);
     color:#000;
-    border-radius:30px;
+    border-radius:35px;
     text-decoration:none;
     font-weight:700;
-    margin-top:18px;
+    font-size:16px;
 }
 
-/* Hero */
+/* HERO */
 .hero{
     text-align:center;
-    padding:60px 0;
+    padding:50px 0 40px;
 }
 
 .logo{
-    width:110px;
-    height:110px;
+    width:100px;
+    height:100px;
     border-radius:50%;
     border:3px solid #00ff88;
     margin-bottom:15px;
+    object-fit:cover;
 }
 
 .hero h1{
-    font-size:34px;
+    font-size:28px;
     color:#00ff88;
+    margin-bottom:10px;
 }
 
 .hero p{
-    margin:12px 0;
-    font-size:16px;
+    font-size:15px;
     opacity:0.9;
+    margin-bottom:10px;
 }
 
-/* Section */
+/* Sections */
 .section{
-    padding:40px 0;
+    padding:35px 0;
 }
 
 .section h2{
     text-align:center;
     color:#00ff88;
-    margin-bottom:25px;
+    margin-bottom:20px;
+    font-size:22px;
 }
 
 /* Cards */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:1fr;
+    gap:18px;
 }
 
-.card{
-    background:#0d2b1c;
+.card, .testimonial, .stat{
+    background:#0b2418;
     border-radius:16px;
-    padding:22px;
+    padding:20px;
     text-align:center;
 }
 
-.card h3{
-    margin-bottom:10px;
+.card h3, .testimonial h3{
     color:#00cfff;
+    margin-bottom:8px;
 }
 
 /* Stats */
 .stats{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px;
-    text-align:center;
-}
-
-.stat{
-    background:#0b2317;
-    padding:22px;
-    border-radius:16px;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
 }
 
 .stat h3{
     color:#00ff88;
-    font-size:26px;
-}
-
-/* Testimonials */
-.testimonial{
-    background:#0b2317;
-    padding:20px;
-    border-radius:16px;
+    font-size:22px;
 }
 
 /* Footer CTA */
@@ -121,7 +114,12 @@ body{
     background:linear-gradient(90deg,#00ff88,#00cfff);
     color:#000;
     text-align:center;
-    padding:45px 20px;
+    padding:40px 15px;
+}
+
+.footer-cta h2{
+    font-size:22px;
+    margin-bottom:10px;
 }
 
 .footer-cta a{
@@ -129,9 +127,15 @@ body{
     color:#00ff88;
 }
 
-/* Responsive */
-@media(max-width:600px){
-    .hero h1{font-size:28px;}
+/* Desktop */
+@media(min-width:768px){
+    .hero h1{font-size:34px;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .stats{grid-template-columns:repeat(3,1fr);}
+}
+
+@media(min-width:1024px){
+    .cards{grid-template-columns:repeat(4,1fr);}
 }
 </style>
 </head>
@@ -140,85 +144,74 @@ body{
 
 <!-- HERO -->
 <section class="hero container">
-    <img src="https://pin.it/64URH7n8w" alt="Virat Cricket Tips" class="logo">
-    <h1>𝐕𝐈𝐑𝐀𝐓 𝐂𝐑𝐈𝐂𝐄𝐓 𝐓𝐈𝐏𝐒</h1>
-    <p>Join 25,000+ Cricket Lovers Getting Accurate Match Predictions 🏏</p>
-    <p>✔ 99% Accuracy | ✔ Free Telegram Channel | ✔ Live Match Alerts</p>
+    <!-- 🔁 Replace this image URL with DIRECT image link -->
+    <img src="https://via.placeholder.com/300x300.png?text=VIRAT+CRICKET+TIPS" class="logo" alt="Virat Cricket Tips">
+
+    <h1>𝐕𝐈𝐑𝐀𝐓 𝐂𝐑𝐈𝐂𝐊𝐄𝐓 𝐓𝐈𝐏𝐒</h1>
+    <p>Join 25,000+ Cricket Fans Winning with Expert Predictions 🏏</p>
+    <p>✔ 99% Accuracy • ✔ Free Telegram Channel • ✔ Live Alerts</p>
+
     <a href="https://t.me/yourtelegramlink" class="btn">Join Free Telegram Channel</a>
 </section>
 
-<!-- WHY CHOOSE -->
+<!-- WHY -->
 <section class="section container">
-    <h2>Why Choose Virat Cricket Tips?</h2>
+    <h2>Why Choose Us?</h2>
     <div class="cards">
         <div class="card">
-            <h3>🏏 Match Predictions</h3>
-            <p>Carefully researched match & session tips.</p>
+            <h3>🏏 Match Tips</h3>
+            <p>High-confidence match & session predictions.</p>
         </div>
         <div class="card">
-            <h3>⚡ Live Updates</h3>
-            <p>Instant toss & live match alerts.</p>
+            <h3>⚡ Live Alerts</h3>
+            <p>Toss & in-play updates instantly.</p>
         </div>
         <div class="card">
             <h3>📊 99% Accuracy</h3>
-            <p>One of the most accurate cricket channels.</p>
+            <p>Proven winning track record.</p>
         </div>
         <div class="card">
             <h3>🧠 Expert Analysis</h3>
-            <p>Pitch, weather & player-based insights.</p>
+            <p>Pitch, weather & player insights.</p>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="section container" style="text-align:center;">
-    <a href="https://t.me/yourtelegramlink" class="btn">Join Free Telegram Channel</a>
-</section>
-
 <!-- STATS -->
 <section class="section container">
-    <h2>Proven Track Record</h2>
+    <h2>Our Performance</h2>
     <div class="stats">
         <div class="stat">
             <h3>2–3</h3>
-            <p>Matches Daily</p>
+            <p>Matches / Day</p>
         </div>
         <div class="stat">
             <h3>99%</h3>
-            <p>Accuracy Rate</p>
+            <p>Accuracy</p>
         </div>
         <div class="stat">
-            <h3>Live</h3>
-            <p>Match Coverage</p>
+            <h3>LIVE</h3>
+            <p>Coverage</p>
         </div>
     </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="section container">
-    <h2>What Our Members Say</h2>
+    <h2>Member Reviews</h2>
     <div class="cards">
         <div class="testimonial">
-            <h3>Rahul S.</h3>
-            <p>“Extremely accurate predictions. Best free cricket tips channel.”</p>
+            <h3>Rahul</h3>
+            <p>Best free cricket tips channel. Very accurate.</p>
         </div>
         <div class="testimonial">
-            <h3>Amit K.</h3>
-            <p>“Live alerts helped me during IPL & World Cup matches.”</p>
+            <h3>Amit</h3>
+            <p>Live alerts are super helpful during IPL.</p>
         </div>
         <div class="testimonial">
-            <h3>Vikas P.</h3>
-            <p>“Genuine analysis without fake hype. Highly trusted.”</p>
+            <h3>Vikas</h3>
+            <p>Genuine analysis, no fake hype.</p>
         </div>
-    </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="footer-cta">
-    <h2>Don’t Miss Today’s Winning Tips 🏏</h2>
-    <p>100% Free • Limited Time Access</p>
-    <a href="https://t.me/yourtelegramlink" class="btn">Join Telegram Channel Now</a>
-</section>
-
-</body>
-</html>
+        <div class="testimonial">
+            <h3>Suresh</h3>
+            <p>Highly trusted channel for match predictions.</p>
